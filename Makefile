@@ -15,5 +15,5 @@ test:
 clean:
 	@$(REBAR) clean
 
-shell:
-	@erl -pz ebin $(RELOADER) -boot start_sasl
+shell: deps compile
+	@erl -pz ebin $(RELOADER)
