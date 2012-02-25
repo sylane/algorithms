@@ -1,0 +1,34 @@
+= Some Algorithms made in Erlang for Fun =
+
+Here are some classic algorithms solved (more or less) in Erlang for the fun of it.
+
+
+== Closes Points ==
+
+Find the closest pair of pints from a list of 2D points.
+
+This is an implementation in Erlang of a well known recursive divide and
+conquer algorithm with complexity O(n log n).
+
+How to use::
+
+  $ make shell
+  1> Data = closest_points:random_data(10000).
+  2> closest_points:find_closest(Data).
+  3> closest_points:benchmark(10000, 10).
+ 
+ 
+== Subset Sum ==
+
+Find a sub-set of a list of integers summing zero.
+
+This one is an approximation that could give false positive for lists bigger
+than 32, but otherwise should be very fast to find a subset summing zero
+in a uniform distribution, even for lists of 1000000+ integers.
+  
+How to use::
+
+  $ make shell
+  1> Data = subset_sum:random_data(10000).
+  2> subset_sum:find_subset(Data).
+  3> subset_sum:benchmark(10000, 10).
